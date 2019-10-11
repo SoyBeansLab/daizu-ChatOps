@@ -15,3 +15,12 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+      
+    - name: Slack Notification
+      uses: homoluctus/slatify@master
+      if: always()  # jobの成否に関わらずSlackへ通知
+      with:
+        type: ${{ job.status }}  # jobの成否を代入(Failure/Success)
+        job_name: '*Lint Check*'
+      env:
+        jobStatus: ${job.status}
