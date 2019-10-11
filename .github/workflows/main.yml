@@ -22,3 +22,6 @@ jobs:
       with:
         type: ${{ job.status }}  # jobの成否を代入(Failure/Success)
         job_name: '*Lint Check*'
+        channel: '#random'
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
