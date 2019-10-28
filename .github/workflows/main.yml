@@ -12,7 +12,7 @@ jobs:
       run: echo Hello, world!
 
       
-    - name: Slack Notification
+    - name: SlackNotification
       uses: homoluctus/slatify@master
       if: always()  # jobの成否に関わらずSlackへ通知
       with:
